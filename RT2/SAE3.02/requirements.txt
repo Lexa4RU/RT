@@ -1,0 +1,9 @@
+socket
+json
+tkinter
+threading
+os
+warnings
+pandas
+PyPDF2
+bs4
