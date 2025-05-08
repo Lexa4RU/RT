@@ -1,0 +1,48 @@
+{% include './includes/header.html' %}
+
+<!-- Page Header-->
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icones/favicon.ico') }}" />
+<header class="masthead" style="background-image: url('/static/images/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Accueil</h1>
+                    <span class="subheading">Présentation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <p>
+                <iframe src="{{ url_for('static', filename='etudiant.txt') }}" width="100%" height="99px"></iframe> 
+            </p>
+            <hr class="my-4"/>
+            <p>
+                Bonjour, je suis Axel Ptak, un étudiant de 19 ans passionné par les Réseaux informatiques et les Télécommunications. 
+                Je suis actuellement étudiant à l'université d'Artois, sur le pôle de Béthune dans le Nord de la France,
+                où je suis des études en R&T (Réseaux informatiques et Télécommunications).
+            </p>           
+            <hr class="my-4"/>
+            <p>
+                Ce site a été premièrement conçu dans le cadre du projet de cours SAE 1.04 intitulé « Se présenter sur Internet ». 
+                Il a été plus tard repris pour le projet SAE 2.03 « Mettre en place une solution informatique pour l'entreprise ».
+                Il est structuré en quatre sections distinctes, toutes accessibles via le menu en haut à droite de la page :
+            </p>
+            <ul>
+                <li>La section actuelle, dédiée à cette petite présentation</li>
+                <li>Mon CV, exposant mon parcours scolaire et universitaire</li>
+                <li>La mise en avant de mes compétences actuelles accessible via uniquement via une connexion</li>
+                <li>Une section dédiée à l'un de mes passe-temps, offrant un aperçu plus personnel</li>
+            </ul>   
+            <br>
+        </div>
+    </div>
+</div>
+
+{% include './includes/footer.html' %}

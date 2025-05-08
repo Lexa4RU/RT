@@ -1,0 +1,107 @@
+{% include './includes/header.html' %}
+
+<!-- Page Header-->
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icones/radioactive.svg') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/csscv.css') }}">
+<header class="masthead" style="background-image: url('/static/images/CV-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Curriculum Vitæ</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p>Mon CV est présent ici :</p>
+                    
+                <section>
+                    <div class="prez">
+                        <h2>Qui suis-je ?</h2>
+                        <p>Je suis un étudiant de 19 ans actuellement en 1ère année de BUT réseaux et télécoms à l'IUT de Béthune.</p>
+                    </div>
+                    <div class="contact">
+                        <h2>Informations de contact</h2>
+                        <div class="contact-flex">
+                            <p><strong>Nom :</strong> Ptak Axel</p>
+                            <p><strong>Adresse :</strong> 125 Rue Camille Desmoulins 59185 Provin</p>
+                            <p><strong>Téléphone :</strong> +33 6 38 98 48 47</p>
+                            <p><strong>Mail :</strong> ptak.axel@gmail.com</p>
+                        </div>
+                    </div>
+                </section>
+                        
+                <section>
+                    <h2>Formation</h2>
+                    <div class="exp">
+                        <div class="exp-logo">
+                            <img src="{{ url_for('static', filename='images/BUT-RT.png') }}" alt="Logo BUT RT">
+                        </div>
+                        <div class="exp-info">
+                            <h3>BUT Réseaux informatiques et télécom</h3>
+                            <h4>2023 - Maintenant</h4>
+                        </div>
+                    </div>
+                    <div class="exp">
+                        <div class="exp-logo">
+                            <img src="{{ url_for('static', filename='images/licence1-artois.png') }}" alt="Licence Eco">
+                        </div>
+                        <div class="exp-info">
+                            <h3>Licence 1 Économie & gestion</h3>
+                            <h4>2022 - 2023</h4>
+                        </div>
+                    </div>
+                    <div class="exp">
+                        <div class="exp-logo">
+                            <img src="{{ url_for('static', filename='images/school.png') }}" alt="Bac">
+                        </div>
+                        <div class="exp-info">
+                            <h3>Bac Général Options SES, Mathématiques</h3>
+                            <h4>2019 - 2022</h4>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Compétences</h2>
+                    <h3 class="h3gauche">Personnelles</h3>
+                    <div class="comp2">
+                        <p>Adaptation</p>
+                        <p>80%</p>
+                        <div class="conteneur-barre2"><span class="barre c80"></span></div>
+                    </div>
+                    <div class="comp2">
+                        <p>Sérieux</p>
+                        <p>95%</p>
+                        <div class="conteneur-barre2"><span class="barre c95"></span></div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Centres d'intérêt</h2>
+                    <figure class="interet">
+                        <img src="{{ url_for('static', filename='/images/cyclisme.jpg') }}" alt="Cyclisme">
+                        <figcaption>Cyclisme</figcaption>
+                    </figure>
+                    <figure class="interet">
+                        <img src="{{ url_for('static', filename='/images/gaming.jpg') }}" alt="Gaming">
+                        <figcaption>Jeux vidéo</figcaption>
+                    </figure>
+                    <figure class="interet">
+                        <img src="{{ url_for('static', filename='/images/livre.jpg') }}" alt="Littérature">
+                        <figcaption>Littérature</figcaption>
+                    </figure>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include './includes/footer.html' %}

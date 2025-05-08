@@ -1,0 +1,52 @@
+{% include './includes/header.html' %}
+
+<!-- Page Header-->
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icones/balloon.svg') }}" />
+<header class="masthead" style="background-image: url('/static/images/hobby-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Hobby</h1>
+                    <span class="subheading">World Of Tanks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p>
+                    Durant mon temps libre, je joue souvent à un jeu nommé World of Tanks. J'ai commencé le jeu en 2012 en tant qu'amateur.
+                    J'ai eu une période semi-professionnelle, durant laquelle j'ai grandement évolué autant sur le jeu que mentalement.
+                    Je m'y suis fait d'ailleurs de précieux amis qui sont encore à l'heure actuelle très proches de moi et avec qui je partage nombres d'expériences de ma vie.
+                </p>
+                <!-- Divider-->
+                <hr class="my-4" />
+                <p>
+                    World of Tanks est un jeu MMO (massivement multijoueur) d'arcade qui plonge les joueurs dans des batailles épiques
+                    opposant des chars de combat de la première moitié du XXe siècle.
+                    Ces affrontements se déroulent principalement en mode 15 contre 15, offrant une expérience immersive où la stratégie,
+                    la coordination d'équipe et la maîtrise des chars sont essentielles. Avec une base de joueurs vaste et dévouée,
+                    le jeu propose un mélange captivant d'action et de tactique.
+                </p>
+                <!-- Divider-->
+                <hr class="my-4" />
+                <p>
+                    Voici une vidéo (faite par mes soins) de l'une de mes batailles pour que vous voyiez par vous-même à quoi ressemble le jeu : 
+                    <a href="https://youtu.be/JSc7JnQwigM">https://youtu.be/JSc7JnQwigM</a>
+                </p>
+                <iframe width="650" height="370" src="https://www.youtube.com/embed/JSc7JnQwigM?si=OSsonlxz_2prLBnA" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                    encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="video_wot">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include './includes/footer.html' %}

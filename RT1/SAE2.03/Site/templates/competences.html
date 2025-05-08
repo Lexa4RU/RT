@@ -1,0 +1,84 @@
+{% include './includes/header_competences.html' %}
+
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">             
+                {% for semestre in semestres %}
+                    <h2>{{ semestre.nom_semestre | e }}</h2>
+                    
+                    {% for bloc in semestre.blocs %}
+                        <h3>{{ bloc.nom_bloc | e }}</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nom de la Compétence</th>
+                                    <th>Niveau d'Acquisition</th>
+                                    <th>Supprimer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for competence in bloc.competences %}
+                                    <tr>
+                                        <td>{{ competence.nom_competence | e }}</td>
+                                        <td>
+                                            {% for niveau in competence.niveaux %}
+                                                {{ niveau.niveau_acquisition | e }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            <form action="/supprimer_competence" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette compétence ?');">
+                                                <input type="hidden" name="competence_code" value="{{ competence.code_competence | e }}">
+                                                <button type="submit">Supprimer</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endfor %}
+                {% endfor %}
+
+                <!-- Formulaire pour ajouter une nouvelle compétence -->
+                <h2>Ajouter une compétence</h2>
+                <form action="/ajouter_competence" method="post" class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="semestre" class="sr-only">Semestre</label>
+                        <select class="form-control" id="semestre" name="semestre" required>
+                            <option value="S1">Semestre 1</option>
+                            <option value="S2">Semestre 2</option>
+                        </select>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="bloc" class="sr-only">Bloc de Compétence</label>
+                        <select class="form-control" id="bloc" name="bloc" required>
+                            <option value="B1">Administrer S1</option>
+                            <option value="B2">Connecter S1</option>
+                            <option value="B3">Programmer S1</option>
+                            <option value="B4">Administrer S2</option>
+                            <option value="B5">Connecter S2</option>
+                            <option value="B6">Programmer S2</option>
+                        </select>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="competence" class="sr-only">Compétence</label>
+                        <input type="text" class="form-control" id="competence" name="competence" placeholder="Compétence" required>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="niveau" class="sr-only">Niveau d'Acquisition</label>
+                        <select class="form-control" id="niveau" name="niveau" required>
+                            <option value="Non acquis">Non acquis</option>
+                            <option value="En cours d'acquisition">En cours d'acquisition</option>
+                            <option value="Presque acquis">Presque acquis</option>
+                            <option value="Acquis">Acquis</option>
+                            <option value="Expert">Expert</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Ajouter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>
+
+{% include './includes/footer.html' %}
