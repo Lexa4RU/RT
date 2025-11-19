@@ -1,0 +1,31 @@
+{% include 'includes/header.html' %}
+<h2>Users management</h2>
+
+<a href="{{ url_for('admin_create_user') }}">Create a new user</a>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Role</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for u in users %}
+    <tr>
+        <td>{{ u.id }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.role }}</td>
+        <td>
+            {% if u.id != current_user.id %}
+            <a href="{{ url_for('admin_delete_user', user_id=u.id) }}"
+               onclick="return confirm('Delete this user?');">
+                Delete
+            </a>
+            {% else %}
+            (You)
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>

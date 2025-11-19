@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Available Images</title>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+<h2>Available Images</h2>
+
+<ul>
+{% for t in templates %}
+    <li>
+        <strong>{{ t.name }}</strong><br>
+        <em>{{ t.description }}</em><br>
+
+        <a href="/launch/{{ t.id }}" target="_blank">Start</a>
+    </li>
+{% endfor %}
+</ul>
+</body>
+</html>

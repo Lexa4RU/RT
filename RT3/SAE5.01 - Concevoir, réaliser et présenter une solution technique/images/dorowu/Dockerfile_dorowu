@@ -1,0 +1,26 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    USER=root \
+    PASSWORD=ubuntu
+
+# Installer LXDE + VNC
+RUN apt-get update \
+    && apt-get install -y lxde-core lxterminal tightvncserver novnc websockify x11vnc \
+    && apt-get clean
+
+# Configurer VNC / noVNC
+RUN mkdir -p /root/.vnc \
+    && echo "${PASSWORD}" | vncpasswd -f > /root/.vnc/passwd \
+    && chmod 600 /root/.vnc/passwd
+
+COPY xstartup /root/.vnc/xstartup  
+RUN chmod +x /root/.vnc/xstartup
+
+# Script de lancement (noVNC + VNC)
+COPY start.sh /start.sh  
+RUN chmod +x /start.sh
+
+EXPOSE 80 5901
+
+CMD ["/start.sh"]

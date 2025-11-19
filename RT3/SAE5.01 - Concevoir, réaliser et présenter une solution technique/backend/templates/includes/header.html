@@ -1,0 +1,26 @@
+<header style="background:#222; color:white; padding:12px;">
+    <nav style="display:flex; gap:20px; align-items:center;">
+
+        <!-- Lien commun à tous -->
+        <a href="/images" style="color:white;">Images</a>
+        <a href="/mycontainers" style="color:white;">Containers</a>
+
+        <!-- Seulement si l’utilisateur est connecté -->
+        {% if current_user.is_authenticated %}
+
+            <!-- Admin uniquement -->
+            {% if current_user.role == 'admin' %}
+                <a href="/admin/users" style="color:#ffcc00;">User management</a>
+                <a href="/admin/images" style="color:#ffcc00;">Image management</a>
+                <a href="/admin/containers" style="color:#ffcc00;">Containers management</a>
+                <a href="/admin/monitoring" style="color:#ffcc00;">Monitoring</a>
+            {% endif %}
+
+            <span style="margin-left:auto;">Logged as <span style="color: DodgerBlue;">{{ current_user.username }}</span> role : <span style="color: DodgerBlue;">{{ current_user.role }}</span></span>
+            <a href="/logout" style="color:white;">Logout</a>
+
+        {% else %}
+            <a href="/login" style="color:white; margin-left:auto;">Login</a>
+        {% endif %}
+    </nav>
+</header>

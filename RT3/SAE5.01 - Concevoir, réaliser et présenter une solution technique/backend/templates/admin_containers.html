@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Containers</title>
+</head>
+<body>
+{% include 'includes/header.html' %}
+<h2>Containers currently in use</h2>
+
+<ul>
+    {% for c in containers %}
+        <li>
+            <b>{{ c.name }}</b><br>
+            User ID : {{ c.user_id }}<br>
+            Image : {{ c.image }}<br>
+            Port : {{ c.port }}<br>
+            <a href="/container/{{ c.id }}" target="_blank">Open</a>
+            <a href="/admin/kill/{{ c.id }}">Kill</a>
+        </li>
+        <br>
+    {% endfor %}
+</ul>
+</body>
+</html>
