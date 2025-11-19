@@ -1,0 +1,8 @@
+flask
+flask_sqlalchemy
+pymysql
+docker
+flask_login
+bcrypt
+itsdangerous
+psutil
