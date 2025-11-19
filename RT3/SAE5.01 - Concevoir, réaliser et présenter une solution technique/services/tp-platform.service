@@ -1,0 +1,15 @@
+[Unit]
+Description=TP Platform Flask App
+After=network.target
+
+[Service]
+User=sae
+Group=sae
+WorkingDirectory=/opt/tp-platform/backend
+Environment="PATH=/opt/tp-platform/backend/venv/bin"
+ExecStart=/opt/tp-platform/backend/venv/bin/gunicorn -b 127.0.0.1:5000 app:app
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
