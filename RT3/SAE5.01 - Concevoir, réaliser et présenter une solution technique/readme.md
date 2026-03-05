@@ -8,7 +8,7 @@
 
     And so, users connect and can open new containers based on the images that the administrators have already created and implemented in the database, and work directly from their browser.
 
-    The administrators can create/delete users, images, and also containers.
+    The administrators can create or delete users, images, and also containers.
 
 ## What about security?
     Security was my first objective, making it as bullet-proof as possible, and so instantly I built a Nginx Server with Gunicorn workers as I said earlier which makes possible the use of certificates for https. 

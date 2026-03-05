@@ -1,4 +1,3 @@
-Nom: Ptak
 Prénom: Axel
 Age: 19
 Formation: Réseaux Informatique & Télécommunications (R&T) 

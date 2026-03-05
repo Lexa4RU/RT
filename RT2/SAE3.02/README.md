@@ -24,7 +24,7 @@
         print(f"Word found in {file} on pages: {pages}")
 
 ### Authors
-    Axel Ptak aka Lev_____
+    Axel
 
 ## Modules used 
     socket
@@ -47,8 +47,8 @@
     pdfplumber 
 
 ### Excel
-    openpyxl (uniquement pour xlsx)
-    pandas
+    openpyxl (only for xlsx)
+    pandas 
 
 ### License
     Licensed under GNU General Public License v3.0
